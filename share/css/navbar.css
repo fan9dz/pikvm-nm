@@ -1,0 +1,97 @@
+ul#navbar {
+	box-shadow: var(--shadow-small);
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: var(--cs-navbar-default-bg);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 50px;
+	z-index: 2147483646;
+}
+
+ul#navbar li.left {
+	border-right: var(--border-navbar-item-thin);
+	float: left;
+}
+
+ul#navbar li a.menu-button {
+	height: 50px;
+	line-height: 50px;
+	outline: none;
+	cursor: pointer;
+	display: inline-block;
+	color: var(--cs-navbar-default-fg);
+	padding-left: 16px;
+	padding-right: 16px;
+	text-decoration: none;
+	position: relative;
+}
+
+ul#navbar li a.menu-button:hover:not(.active) {
+	background-color: var(--cs-navbar-item-hovered-bg);
+}
+
+ul#navbar li a.menu-button span {
+	vertical-align: middle;
+	height: 20px;
+}
+
+ul#navbar li a.menu-button span:not(:last-child) {
+	margin-right: 10px;
+}
+
+ul#navbar li a.menu-button-pressed {
+	box-shadow: var(--shadow-navbar-item-pressed);
+	background-color: var(--cs-navbar-item-pressed-bg) !important;
+}
+
+ul#navbar li div.menu {
+	visibility: hidden;
+	outline: none;
+	overflow: hidden;
+	white-space: nowrap;
+	border: var(--border-navbar-menu-default-2px);
+	border-top: var(--border-navbar-menu-top-thin);
+	border-radius: 0 0 8px 8px;
+	position: absolute;
+	background-color: var(--cs-navbar-default-bg);
+	box-shadow: var(--shadow-big);
+	z-index: 2147483645;
+}
+
+ul#navbar li div.menu-active {
+	border: var(--border-navbar-menu-active-2px) !important;
+	border-top: var(--border-navbar-menu-top-thin) !important;
+}
+
+ul#navbar li div.menu div.text {
+	margin: 10px 15px 10px 15px;
+	font-size: 14px;
+}
+
+ul#navbar li div.menu table.kv {
+	border-spacing: 5px;
+	margin: 0 10px 0 10px;
+	font-size: 12px;
+}
+
+ul#navbar li div.menu table.kv td {
+	text-align: left;
+}
+
+ul#navbar li div.menu details.normal summary {
+	cursor: pointer;
+	outline: none;
+	text-decoration: underline;
+	margin: 8px 15px 8px 15px;
+	font-size: 12px;
+}
+ul#navbar li div.menu details.normal div.spoiler {
+	margin-left: 20px !important;
+	border-left: var(--border-default-thin);
+}
+ul#navbar li div.menu details.normal summary::marker {
+	color: var(--cs-marker-fg);
+}

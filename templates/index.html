@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>NetConfigDemo</title>
+  <link rel="stylesheet" href="/share/css/vars.css">
+  <link rel="stylesheet" href="/share/css/main.css">
+  <link rel="stylesheet" href="/share/css/navbar.css">
+  <link rel="stylesheet" href="/share/css/radio.css">
+  <link rel="stylesheet" href="/share/css/switch.css">
+  <link rel="stylesheet" href="/share/css/network.css">
+</head>
+
+<body class="body-no-select">
+  <ul id="navbar">
+    <!-- nm start -->
+    <li class="right" id="network-dropdown"><a class="menu-button" id="network-button" href="#"><span>Network</span></a>
+      <div class="menu" id="network-menu" style="width: 286px;">
+        <div class="text"><b>IP Settings<br></b></div>
+        <hr>
+        <details class="normal net-box" open>
+          <summary>Wired IP Settings</summary>
+          <div class="spoiler">
+            <form method="post" action="/net/modify_ip_configs" autocomplete="off" class="wired-form">
+              <table class="kv">
+                <tr>
+                  <td>IP mode:</td>
+                  <td>
+                    <div class="radio-box">
+                      <input checked type="radio" id="wired-manual-radio" name="wired-method" value="1">
+                      <label for="wired-manual-radio" id="wired-manual-label">Manual</label>
+                      <input type="radio" id="wired-auto-radio" name="wired-method" value="0">
+                      <label for="wired-auto-radio" id="wired-auto-label">DHCP</label>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <table id="wired-configs-table" style="margin:0 0 0 13px; font-size: 12px;">
+                <tr>
+                  <td>Ip Address:&nbsp</td>
+                  <td><input type="text" id="wired-ip-input" name="wired-ip" >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Gateway:&nbsp</td>
+                  <td><input type="text" id="wired-gateway-input" name="wired-gateway"></td>
+                </tr>
+                <tr>
+                  <td>DNS Server:&nbsp</td>
+                  <td><input type="text" id="wired-dns-input" name="wired-dns">
+                  </td>
+                </tr>
+              </table>
+              <table class="kv" style="margin-bottom: 10px">
+                <tr>
+                  <td>
+                    <input type="submit" id="wired-submit" value="&bull; Done">
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </div>
+        </details>
+        <details class="normal net-box">
+          <summary>Wireless IP Settings</summary>
+          <div class="spoiler">
+            <form method="post" action="/net/modify_ip_configs" autocomplete="off" class="wireless-form">
+              <table class="kv">
+                <tr>
+                  <td>IP mode:</td>
+                  <td>
+                    <div class="radio-box">
+                      <input checked type="radio" id="wireless-manual-radio" name="wireless-method" value="1">
+                      <label for="wireless-manual-radio" id="wireless-manual-label">Manual</label>
+                      <input type="radio" id="wireless-auto-radio" name="wireless-method" value="0">
+                      <label for="wireless-auto-radio" id="wireless-auto-label">DHCP</label>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <table id="wireless-configs-table" style="margin:0 0 0 13px; font-size: 12px;">
+                <tr>
+                  <td>Ip Address:&nbsp</td>
+                  <td><input type="text" id="wireless-ip-input" name="wireless-ip"></td>
+                </tr>
+                <tr>
+                  <td>Gateway:&nbsp</td>
+                  <td><input type="text" id="wireless-gateway-input" name="wireless-gateway"></td>
+                </tr>
+                <tr>
+                  <td>DNS Server:&nbsp</td>
+                  <td><input type="text" id="wireless-dns-input" name="wireless-dns"></td>
+                </tr>
+              </table>
+              <table class="kv" style="margin-bottom: 10px">
+                <tr>
+                  <td><input type="submit" id="wireless-submit" value="&bull; Done"></td>
+                </tr>
+              </table>
+            </form>
+          </div>
+        </details>
+        <details class="normal net-box">
+          <summary>WAP settings</summary>
+          <div class="spoiler">
+            <form method="post" action="/net/modify_wap_configs" autocomplete="off">
+              <table id="wap-configs-table" style="margin:0 0 0 13px; font-size: 12px;">
+                <tr>
+                  <td>Ip Address:&nbsp</td>
+                  <td><input type="text" id="wap-ip-input" name="wap-ip"></td>
+                </tr>
+                <tr>
+                  <td>SSID:&nbsp</td>
+                  <td><input type="text" id="wap-ssid-input" name="wap-ssid"></td>
+                </tr>
+                <tr>
+                  <td>Password:&nbsp</td>
+                  <td><input type="text" id="wap-pwd-input" name="wap-pwd"></td>
+                </tr>
+              </table>
+              <table class="kv" style="margin-bottom: 10px">
+                <tr>
+                  <td><input type="submit" id="wap-submit" value="&bull; Done"></td>
+                </tr>
+              </table>
+            </form>
+          </div>
+        </details>
+        <hr>
+        <div class="text"><b>Wlan Settings<br></b></div>
+        <hr>
+        <table class="kv">
+          <tr>
+            <td>WAP Enabled:</td>
+            <td align="right">
+              <div class="switch-box">
+                <input type="checkbox" id="wap-enabled-checkbox">
+                <label for="wap-enabled-checkbox">
+                  <span class="switch-inner"></span>
+                  <span class="switch"></span></label>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <hr>
+        <div class="wifi-container">
+          <div class="wifi-scroll-container" id="wifi-scroll-container">
+
+          </div>
+        </div>
+
+      </div>
+    </li>
+    <!-- nm end -->
+  </ul>
+  <script src="/share/js/menu.js"></script>
+  <script type="module" src="/share/js/network/main.js"></script> 
+</body>
+
+</html>

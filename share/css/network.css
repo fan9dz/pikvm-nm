@@ -1,0 +1,143 @@
+input[type="submit"] {
+	border: none;
+	border-radius: 4px;
+	color: var(--cs-control-default-fg);
+	background-color: var(--cs-control-default-bg);
+	height: 26px;
+	font-family: inherit;
+	font-size: 14px;
+	outline: none;
+	cursor: pointer;
+	display: block;
+	width: 100%;
+}
+
+input[type="submit"]:hover {
+	color: var(--cs-control-hovered-fg);
+	background-color: var(--cs-control-hovered-bg);
+}
+
+input[type="submit"]:active {
+	color: var(--cs-control-pressed-fg);
+	background-color: var(--cs-control-pressed-bg);
+}
+
+input[type="submit"].lock {
+	pointer-events: none;
+}
+
+input[type=text] {
+	overflow-x: auto;
+	font-family: monospace;
+	border-radius: 4px;
+	border: var(--border-default-thin);
+	color: var(--cs-code-default-fg);
+	background-color: var(--cs-code-default-bg);
+	padding: 2px;
+	height: 20px;
+}
+
+table.lock input[type=text] {
+	border-color: var(--cs-code-default-bg);
+	pointer-events: none;
+}
+
+input[type=text].error {
+	border: 1px solid #c30 !important;
+	outline: none;
+}
+
+label.lock {
+	pointer-events: none;
+}
+
+/* -------------------------wlan部分------------------------- */
+
+/* wifi菜单和滑条 */
+div.wifi-container {
+	overflow: hidden;
+	max-height: 145px;
+	margin: 0 3px 12px 0;
+}
+
+div.wifi-scroll-container {
+	overflow: auto;
+	max-height: 145px;
+    margin-left: 15px;
+}
+
+@-moz-document url-prefix() {
+	div.wifi-scroll-container {
+		scrollbar-width: thin;
+		scrollbar-color: #36393f #202225;
+	}
+}
+
+div.wifi-scroll-container::-webkit-scrollbar {
+	width: 10px;
+}
+
+div.wifi-scroll-container::-webkit-scrollbar-thumb {
+	background-color: #36393f;
+	border-radius: 4px;
+	border: 2px solid transparent;
+	background-clip: content-box;
+}
+
+div.wifi-scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--cs-control-hovered-bg);
+}
+
+/* wifi列表中的一个 */
+div.wifi-item {
+	display: flex;
+	align-items: center;
+	font-family: inherit;
+	font-size: 14px;
+	margin: 2px 0;
+}
+
+div.wifi-item summary {
+    margin: 0 0 0 0 !important;
+    text-decoration: none !important;
+	list-style:none;
+	cursor: default;
+	display: flex;
+	align-items: center;
+	height: 24px;
+}
+
+div.wifi-item img {
+	height: 16px;
+}
+
+/* wifi名，用input方便form传参 */
+div.wifi-item input[type=text].wifi-ssid {
+	border: none;               /* 移除边框 */
+    outline: none;              /* 移除焦点边框 */
+    background: transparent;    /* 透明背景 */
+    font-size: 14px;            /* 文字大小 */
+    font-family: inherit;       /* 继承字体 */
+    color: inherit;             /* 继承文字颜色 */
+	height: 20px;
+	pointer-events: none;
+	margin-left: 5px;
+	max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis; /* 显示省略号 */
+}
+
+div.wifi-item table{
+	margin-left: 20px;
+}
+
+div.wifi-item input[type=password] {
+	overflow-x: auto;
+	font-family: monospace;
+	border-radius: 4px;
+	border: var(--border-default-thin);
+	color: var(--cs-code-default-fg);
+	background-color: var(--cs-code-default-bg);
+	padding: 2px;
+	height: 20px;
+}

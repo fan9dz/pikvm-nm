@@ -1,0 +1,28 @@
+body {
+	margin: 0;
+	overflow: hidden;
+	color: var(--cs-page-default-fg);
+	background-color: var(--cs-page-default-bg);
+	font-family: arial, sans-serif !important;
+}
+
+body.body-no-select {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	touch-action: manipulation;
+}
+
+a {
+	color: var(--cs-page-default-fg);
+}
+
+hr {
+	border: none;
+	margin: 0;
+	display: block;
+	height: 0px;
+	padding: 0;
+	border-top: var(--border-control-thin);
+}
+
