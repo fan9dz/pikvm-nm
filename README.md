@@ -21,7 +21,7 @@ pip install nmcli==1.3.0
 ```
 安装
 ```
-git clone
+git clone https://github.com/fan9dz/pikvm-nm.git
 cd pikvm-nm
 python3 install.py
 ```
