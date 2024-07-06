@@ -1,0 +1,28 @@
+# Flask related
+__pycache__/
+.env
+
+# Virtual Environment
+venv/
+.Python
+bin/
+include/
+lib/
+Scripts/
+
+# IDE related
+.vscode/
+*.code-workspace
+
+# Flask cache
+instance/
+
+# Compiled files
+*.pyc
+*.pyo
+
+# Package files
+*.egg
+*.egg-info
+dist/
+build/
